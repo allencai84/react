@@ -1,10 +1,10 @@
-import Calculator from './Calculator';
+import Form from './test';
 
 export default function Home() {
   return (
     <div>
       <h1>Calculator App</h1>
-      <Calculator />
+      {/* <Form /> */}
     </div>
   );
 }
