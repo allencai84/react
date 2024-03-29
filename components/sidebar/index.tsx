@@ -1,4 +1,4 @@
-"use client";
+'use client';
 import {
   LucideIcon,
   LayoutDashboard,
@@ -6,8 +6,8 @@ import {
   CircleUserRound,
   Settings,
   WalletCards,
-} from "lucide-react";
-import SidebarItem from "./item";
+} from 'lucide-react';
+import SidebarItem from './item';
 
 interface ISidebarItem {
   name: string;
@@ -23,51 +23,61 @@ interface ISubItem {
 
 const items: ISidebarItem[] = [
   {
-    name: "Dashboard",
-    path: "/",
+    name: 'Dashboard',
+    path: '/',
     icon: LayoutDashboard,
   },
   {
-    name: "Transaction",
-    path: "/transaction",
+    name: 'Todo List',
+    path: '/todolist',
     icon: BadgeDollarSign,
   },
-  {
-    name: "Payment",
-    path: "/payment",
-    icon: WalletCards,
-  },
-  {
-    name: "Accounts",
-    path: "/accounts",
-    icon: CircleUserRound,
-  },
-  {
-    name: "Settings",
-    path: "/settings",
-    icon: Settings,
-    items: [
-      {
-        name: "General",
-        path: "/settings",
-      },
-      {
-        name: "Security",
-        path: "/settings/security",
-      },
-      {
-        name: "Notifications",
-        path: "/settings/notifications",
-      },
-    ],
-  },
+  // {
+  //   name: 'Payment',
+  //   path: '/payment',
+  //   icon: WalletCards,
+  // },
+  // {
+  //   name: 'Accounts',
+  //   path: '/accounts',
+  //   icon: CircleUserRound,
+  // },
+  // {
+  //   name: 'Settings',
+  //   path: '/settings',
+  //   icon: Settings,
+  //   items: [
+  //     {
+  //       name: 'General',
+  //       path: '/settings',
+  //     },
+  //     {
+  //       name: 'Security',
+  //       path: '/settings/security',
+  //     },
+  //     {
+  //       name: 'Notifications',
+  //       path: '/settings/notifications',
+  //     },
+  //   ],
+  // },
 ];
+
+import Image from 'next/image';
 
 const Sidebar = () => {
   return (
     <div className="fixed top-0 left-0 h-screen w-64 bg-white shadow-lg z-10 p-4">
       <div className="flex flex-col space-y-10 w-full">
-        <img className="h-10 w-fit" src="/favicon.ico" alt="Logo" />
+        <div className="flex items-center space-x-2">
+          <Image
+            src="/favicon.ico" // 路徑
+            alt="Logo" // 替代文字
+            width={30} // 寬度
+            height={30} // 高度
+          />
+          <span>Allencai</span>
+        </div>
         <div className="flex flex-col space-y-2">
           {items.map((item, index) => (
             <SidebarItem key={index} item={item} />
